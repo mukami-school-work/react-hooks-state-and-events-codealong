@@ -1,7 +1,14 @@
 import React from "react";
+import react, {useState} from "react";
 
 function Toggle() {
-  return <button>OFF</button>;
+  const [isOn, setIsOn] = useState(false);
+
+  function handleClick() {
+    setIsOn((isOn) => !isOn);
+  }
+
+  return <button onClick={handleClick}>{isOn ? "ON" : "OFF"}</button>;
 }
 
 export default Toggle;
